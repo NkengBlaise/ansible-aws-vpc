@@ -1,3 +1,0 @@
-bastion_ami: ami-08970251d20e940b0
-region: us-east-2
-MYIP: 192.168.1.153/32
