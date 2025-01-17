@@ -4,3 +4,5 @@
   connection: local
   gather_facts: no
   tasks:
+    - name: import VPC setup variable
+      include_vars: vars/vpc-output_vars
