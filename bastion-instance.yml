@@ -36,8 +36,6 @@
             cidr_ip: "{{MYIP}}"
       register: BastionSG_out
 
-
-
     - name: Creating Basion Host
       ec2:
         key_name: vprofile-key
@@ -58,3 +56,7 @@
         group_id: "{{BastionSG_out.group_id}}"
         vpc_subnet_id: "{{pubsub1id}}"   
       register: bastionHost_out
+
+
+      #  - debug:
+  #      var: vpcout
