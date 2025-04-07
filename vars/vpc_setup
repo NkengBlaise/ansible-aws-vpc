@@ -23,3 +23,7 @@ zone3: "us-east-2c"
 
 
 state: present
+
+#Bastion Vars
+bastion_ami: ami-0100e595e1cc1ff7f
+MYIP: 192.168.1.153/32
