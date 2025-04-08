@@ -69,7 +69,7 @@
     - name: Creating Nginx web01
       amazon.aws.ec2_instance:
         name: "Nginx web01"
-        key_name: vprokey
+        key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
         image_id: "{{ nginx_ami }}"
@@ -89,7 +89,7 @@
     - name: Creating tomcat app01
       amazon.aws.ec2_instance:
         name: "Tomcat app01"
-        key_name: vprokey
+        key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
         image_id: "{{ tomcat_ami }}"
@@ -110,7 +110,7 @@
     - name: Creating memcache app01
       amazon.aws.ec2_instance:
         name: "memcache mc01"
-        key_name: vprokey
+        key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
         image_id: "{{ memcache_ami }}"
@@ -130,7 +130,7 @@
     - name: Creating RabbitMQ app01
       amazon.aws.ec2_instance:
         name: "RabbitMQ mc01"
-        key_name: vprokey
+        key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
         image_id: "{{ rmq_ami }}"
@@ -151,7 +151,7 @@
     - name: Creating Mysql db01
       amazon.aws.ec2_instance:
         name: "Mysql db01"
-        key_name: vprokey
+        key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
         image_id: "{{ mysql_ami }}"
