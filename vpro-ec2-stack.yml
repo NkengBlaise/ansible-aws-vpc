@@ -170,7 +170,7 @@
 
 
     - debug:
-        var: db01_out.tagged_instances[0].id
+        var: db01_out
 
     - local_action:
         module: ec2_elb_lb
