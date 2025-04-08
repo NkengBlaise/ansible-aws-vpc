@@ -165,7 +165,7 @@
 
 
     - debug:
-        var: db01_out.instances[0].image_id
+        var: db01_out
 
     - local_action:
         module: ec2_elb_lb
