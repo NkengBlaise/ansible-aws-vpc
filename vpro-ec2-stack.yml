@@ -53,5 +53,16 @@
             from_port: 22
             to_port: 22
             group_id: "{{BastionSGid}}"
-      register: vproStackSG_out
+      register: vproStackSG_out       
+
+    - name: Create Security group with its own sg id
+      ec2_group:
+        name: vproStack-sg
+        description: Allow port 22 from everywhere and all port withing security_group 
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: all
+            group_id: "{{vproStackSG_out.group_id}}"
         
