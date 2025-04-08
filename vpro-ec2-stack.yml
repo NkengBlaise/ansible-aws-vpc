@@ -67,12 +67,12 @@
             group_id: "{{vproStackSG_out.group_id}}"
 
     - name: Creating Nginx web01
-      amazon.aws.ec2_instance:
+      community.aws.ec2:
         name: "Nginx web01"
         key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
-        image_id: "{{ nginx_ami }}"
+        image: "{{ nginx_ami }}"
         wait: yes
         wait_timeout: 300
         exact_count: 1
@@ -83,11 +83,8 @@
           Name: "web01"
           Project: Vprofile
           Owner: DevOps Team
-        tags:
-          Name: "web01"
-        network:
-          security_group_id: "{{vproStackSG_out.group_id}}"
-          subnet_id: "{{privsub1id}}"
+        group_id: "{{vproStackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
       register: web01_out
 
     - name: Creating tomcat app01
