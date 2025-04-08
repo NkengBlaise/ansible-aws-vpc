@@ -75,12 +75,16 @@
         image_id: "{{ nginx_ami }}"
         wait: yes
         wait_timeout: 300
-        count: 1
+        exact_count: 1
+        count_tag:
+          Name: "web01"
         state: running
-        tags:
+        instance_tags:
           Name: "web01"
           Project: Vprofile
           Owner: DevOps Team
+        tags:
+          Name: "web01"
         network:
           security_group_id: "{{vproStackSG_out.group_id}}"
           subnet_id: "{{privsub1id}}"
@@ -95,12 +99,16 @@
         image_id: "{{ tomcat_ami }}"
         wait: yes
         wait_timeout: 300
-        count: 1
+        exact_count: 1
+        count_tag:
+          Name: "app01"
         state: running
-        tags:
+        instance_tags:
           Name: "app01"
           Project: Vprofile
           Owner: DevOps Team
+        tags:
+          Name: "app01"
         network:
           security_group_id: "{{vproStackSG_out.group_id}}"
           subnet_id: "{{privsub1id}}"
@@ -116,12 +124,16 @@
         image_id: "{{ memcache_ami }}"
         wait: yes
         wait_timeout: 300
-        count: 1
+        exact_count: 1
         state: running
-        tags:
+        count_tag:
+          Name: "mc01"
+        instance_tags:
           Name: "mc01"
           Project: Vprofile
           Owner: DevOps Team
+        tags:
+          Name: "mc01"
         network:
           security_group_id: "{{vproStackSG_out.group_id}}"
           subnet_id: "{{privsub1id}}"
@@ -136,12 +148,16 @@
         image_id: "{{ rmq_ami }}"
         wait: yes
         wait_timeout: 300
-        count: 1
+        exact_count: 1
+        count_tag:
+          Name: "rmq01"
         state: running
-        tags:
+        instance_tags:
           Name: "rmq01"
           Project: Vprofile
           Owner: DevOps Team
+        tags:
+          Name: "rmq01"
         network:
           security_group_id: "{{vproStackSG_out.group_id}}"
           subnet_id: "{{privsub1id}}"
@@ -157,12 +173,16 @@
         image_id: "{{ mysql_ami }}"
         wait: yes
         wait_timeout: 300
-        count: 1
+        exact_count: 1
+        count_tag:
+          Name: "db01"
         state: running
-        tags:
+        instance_tags:
           Name: "db01"
           Project: Vprofile
           Owner: DevOps Team
+        tags:
+          Name: "db01"
         network:
           security_group_id: "{{vproStackSG_out.group_id}}"
           subnet_id: "{{privsub1id}}"
